@@ -37,7 +37,6 @@ The `CryptoPriceAppAPI` project provides a web-based interface for accessing cry
 #### **Controllers**
 
 - **PriceController.cs**: The core controller handling API requests for cryptocurrency prices. It provides two main endpoints:
-
   - `GET /api/Price/{symbol}/24hAvgPrice`: Retrieves the 24-hour average price for the specified cryptocurrency.
   - `GET /api/Price/{symbol}/SimpleMovingAverage`: Calculates the Simple Moving Average (SMA) for the specified cryptocurrency over a given period.
 
@@ -256,12 +255,11 @@ The `Data` project contains the database context and entity models. It is respon
       public DbSet<PriceModel> Prices { get; set; }
 
       public CryptoPriceDbContext(DbContextOptions<Crypto
-  ```
 
 PriceDbContext> options) : base(options)
-{
-Prices = this.Set<PriceModel>();
-}
+      {
+          Prices = this.Set<PriceModel>();
+      }
 
       protected override void OnModelCreating(ModelBuilder modelBuilder)
       {
@@ -275,24 +273,22 @@ Prices = this.Set<PriceModel>();
               entity.HasIndex(p => new { p.Symbol, p.Timestamp });
           });
       }
-
-}
-
-````
+  }
+  ```
 
 #### **Models**
 
 - **BaseEntity.cs**: Provides a base entity with a unique identifier for other models to inherit from.
 
-```csharp
-public class BaseEntity
-{
-    [Key]
-    public int Id { get; set; }
-}
-````
+  ```csharp
+  public class BaseEntity
+  {
+      [Key]
+      public int Id { get; set; }
+  }
+  ```
 
-- **BinancePriceUpdate.cs**: Represents the structure of price updates received from Binance WebSocket.
+- **BinancePriceUpdate.cs**: Represents the structure of price updates received from Binance WebSocket. 
 
   ```csharp
   public class BinancePriceUpdate
@@ -579,13 +575,12 @@ The `Repository` project implements data access and repository patterns for inte
           return filter == null ? await _entities.ToListAsync() : await _entities.Where(filter).ToListAsync();
       }
 
+     
 
-  ```
-
-public async Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>> where)
-{
-return await \_entities.FirstOrDefaultAsync(where);
-}
+ public async Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>> where)
+      {
+          return await _entities.FirstOrDefaultAsync(where);
+      }
 
       public async Task AddAsync(T entity)
       {
@@ -604,41 +599,39 @@ return await \_entities.FirstOrDefaultAsync(where);
           _entities.Remove(entity);
           await _context.SaveChangesAsync();
       }
-
-}
-
-````
+  }
+  ```
 
 - **UnitOfWork.cs**: Manages database transactions and provides access to repositories.
 
-```csharp
-public class UnitOfWork : IUnitOfWork
-{
-    private readonly CryptoPriceDbContext _context;
-    private readonly IServiceProvider _serviceProvider;
+  ```csharp
+  public class UnitOfWork : IUnitOfWork
+  {
+      private readonly CryptoPriceDbContext _context;
+      private readonly IServiceProvider _serviceProvider;
 
-    public UnitOfWork(CryptoPriceDbContext context, IServiceProvider serviceProvider)
-    {
-        _context = context;
-        _serviceProvider = serviceProvider;
-    }
+      public UnitOfWork(CryptoPriceDbContext context, IServiceProvider serviceProvider)
+      {
+          _context = context;
+          _serviceProvider = serviceProvider;
+      }
 
-    public IRepository<T> Repository<T>() where T : BaseEntity
-    {
-        return _serviceProvider.GetService<IRepository<T>>();
-    }
+      public IRepository<T> Repository<T>() where T : BaseEntity
+      {
+          return _serviceProvider.GetService<IRepository<T>>();
+      }
 
-    public async Task SaveChangesAsync()
-    {
-        await _context.SaveChangesAsync();
-    }
+      public async Task SaveChangesAsync()
+      {
+          await _context.SaveChangesAsync();
+      }
 
-    public void Dispose()
-    {
-        _context.Dispose();
-    }
-}
-````
+      public void Dispose()
+      {
+          _context.Dispose();
+      }
+  }
+  ```
 
 #### **Implementations**
 
