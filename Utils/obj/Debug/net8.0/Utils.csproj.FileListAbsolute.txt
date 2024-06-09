@@ -1,0 +1,11 @@
+E:\Projects\CryptoPriceAppAPI\Utils\bin\Debug\net8.0\Utils.deps.json
+E:\Projects\CryptoPriceAppAPI\Utils\bin\Debug\net8.0\Utils.dll
+E:\Projects\CryptoPriceAppAPI\Utils\bin\Debug\net8.0\Utils.pdb
+E:\Projects\CryptoPriceAppAPI\Utils\obj\Debug\net8.0\Utils.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\CryptoPriceAppAPI\Utils\obj\Debug\net8.0\Utils.AssemblyInfoInputs.cache
+E:\Projects\CryptoPriceAppAPI\Utils\obj\Debug\net8.0\Utils.AssemblyInfo.cs
+E:\Projects\CryptoPriceAppAPI\Utils\obj\Debug\net8.0\Utils.csproj.CoreCompileInputs.cache
+E:\Projects\CryptoPriceAppAPI\Utils\obj\Debug\net8.0\Utils.dll
+E:\Projects\CryptoPriceAppAPI\Utils\obj\Debug\net8.0\refint\Utils.dll
+E:\Projects\CryptoPriceAppAPI\Utils\obj\Debug\net8.0\Utils.pdb
+E:\Projects\CryptoPriceAppAPI\Utils\obj\Debug\net8.0\ref\Utils.dll

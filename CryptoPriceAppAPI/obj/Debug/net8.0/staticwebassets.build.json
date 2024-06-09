@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "DoiO5pkTPVgOxiYM4R1MPoqR2s3QelKV4BaS7c1/gck=",
+  "Source": "CryptoPriceAppAPI",
+  "BasePath": "_content/CryptoPriceAppAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
