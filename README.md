@@ -758,50 +758,25 @@ The `Utils` project provides utility classes used across the application.
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/CryptoPriceApp.git
-   ```
-
-2. **Navigate to the Project Directory**:
-
-   ```bash
-   cd CryptoPriceApp
-   ```
-
-3. **Restore Dependencies**:
-
-   ```bash
-   dotnet restore
+   git clone https://github.com/AyatoShirayouki/CryptoPriceApp
    ```
 
 ### Running the API
 
 1. **Navigate to the API Project**:
 
-   ```bash
-   cd CryptoPriceAppAPI
-   ```
+  Open appsettings.json and place the connection string for your MsSql database.
 
 2. **Run the API**:
-
-   ```bash
-   dotnet run
-   ```
-
-   The API should be accessible at `https://localhost:7281`.
 
 ### Using the Console App
 
 1. **Navigate to the Console App Project**:
 
-   ```bash
-   cd CryptoPriceConsole
-   ```
+   - Go to \bin\Debug\net8.0
+   - open appsettings.json and place the connection string for your MsSql database.
 
 2. **Run the Console App**:
-
-   ```bash
-   dotnet run
-   ```
 
 3. **Enter Commands**:
 
@@ -821,10 +796,6 @@ Custom error handling is implemented through the `ExceptionHandler` class in the
 
 The `BinancePriceService` in the `Domain` project connects to the Binance WebSocket API to receive real-time cryptocurrency price updates. These updates are processed and stored in the database asynchronously, allowing the application to provide up-to-date price information.
 
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes. Make sure to follow the project's coding guidelines and document your changes.
-
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License.
