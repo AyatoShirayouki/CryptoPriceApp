@@ -21,7 +21,6 @@ CryptoPriceApp is a robust and extensible solution designed to provide real-time
   - [Database Initialization](#database-initialization)
   - [Error Handling](#error-handling)
   - [Real-time Price Updates](#real-time-price-updates)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Project Structure
