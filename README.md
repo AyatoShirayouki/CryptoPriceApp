@@ -251,7 +251,7 @@ The `Data` project contains the database context and entity models. It is respon
 
       public CryptoPriceDbContext(DbContextOptions<Crypto
 
-PriceDbContext> options) : base(options)
+      PriceDbContext> options) : base(options)
       {
           Prices = this.Set<PriceModel>();
       }
@@ -572,7 +572,7 @@ The `Repository` project implements data access and repository patterns for inte
 
      
 
- public async Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>> where)
+      public async Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>> where)
       {
           return await _entities.FirstOrDefaultAsync(where);
       }
@@ -757,7 +757,7 @@ The `Utils` project provides utility classes used across the application.
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/AyatoShirayouki/CryptoPriceApp
+   git clone https://github.com/AyatoShirayouki/CryptoPriceApp.git
    ```
 
 ### Running the API
